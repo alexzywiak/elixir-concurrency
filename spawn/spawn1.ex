@@ -18,4 +18,5 @@ send pid, {self, "Again!"}
 
 receive do
   {:ok, msg} -> IO.puts msg
+  after 500 -> IO.puts "Is there anybody out there?"
 end
