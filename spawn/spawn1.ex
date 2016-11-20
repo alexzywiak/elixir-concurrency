@@ -3,6 +3,9 @@ defmodule Spawn1 do
     receive do
       {sender, msg} -> 
         send sender, {:ok, "Hello #{msg}!"}
+        # Uses tail call optimization so that shit doesn't explode
+        # Rescursive call MUST be the last part of the function
+        greet
     end
   end
 end
