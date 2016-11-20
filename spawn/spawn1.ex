@@ -13,3 +13,9 @@ send pid, {self, "World!"}
 receive do
   {:ok, msg} -> IO.puts msg
 end
+
+send pid, {self, "Again!"}
+
+receive do
+  {:ok, msg} -> IO.puts msg
+end
